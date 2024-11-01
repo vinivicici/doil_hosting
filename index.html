@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>문제</h1>
+    <p>승민이는 수영이네 바로 왼쪽 집에 삽니다.<br>
+    도일이는 피스타치오 알레르기가 있습니다.<br>
+    유진이는 보드카를 마십니다.<br>
+    첫번째 집에 사는 사람은 위스키를 마십니다.<br>
+    사진이 취미인 사람 바로 옆집에 게임이 취미인 사람이 삽니다.<br>
+    남자는 검도가 취미입니다.<br>
+    당고를 좋아하는 사람은 코냑을 싫어합니다.<br>
+    거북이를 키우는 사람은 퍼즐이 취미입니다.<br>
+    초콜릿을 좋아하는 사람은 진을 마시는 사람을 사랑합니다.<br>
+    수영이는 강아지를 키웁니다.<br>
+    햄스터를 키우는 사람은 도일이를 사랑합니다.<br>
+    코냑을 마시는 사람은 보드카를 마시는 사람 바로 오른쪽 집에 삽니다.<br>
+    <br>
+    개구리를 좋아하는 사람은 누구입니까?</p>
+
+    <input type="text" id="answer" placeholder="정답을 입력하세요">
+    <button onclick="checkAnswer()">제출</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value.toLowerCase();
+            const resultDiv = document.getElementById("result");
+
+            if (answer === "도일" || answer === "doyle") {
+                resultDiv.innerHTML = "정답입니다! 도일이는 앞다리를 특히 좋아한다네요. 비밀번호: 384";
+                resultDiv.style.color = "green";
+            } else if (answer === "승민" || answer === "seungmin") {
+                resultDiv.innerHTML = "오답입니다! 승민이는 개미핥기를 키운답니다.";
+                resultDiv.style.color = "red";
+            } else {
+                resultDiv.innerHTML = "오답";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
